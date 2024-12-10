@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Sqaure Root Finder App</title>
+        <style>
+            *{background-color:azure;font-size:30px;}
+            h1{background-color:black;color:white;border-radius:40px;width:70%}
+
+        </style>    
+    </head>
+    <body>
+        <center>
+        <h1>Sqaure Root Finder App</h1>
+        <br/><br/>
+        <form onsubmit="show()">
+            <label>Enter Number</label>
+            <input type="number" step="any" placeholder="enter number" id="num"/>
+            <br/><br/>
+            <input type="submit" value="Find Sqaure" />
+            <br/><br/>
+        </form>
+        <h2 id="msg"></h2>
+        <script>
+            function show()
+            {
+                event.preventDefault();
+                let num=document.getElementById("num");
+                let msg=document.getElementById("msg");
+
+                if(num.value==="")
+                {
+                    alert("please enter number");
+                    msg.innerHTML="";
+                    num.focus();
+                    return;
+                }
+
+                let n=parseFloat(num.value);
+                res=n*n;
+                let ans="Square = "+res.toFixed(2);
+                msg.innerHTML=ans;
+            }
+        </script>   
+        </center>  
+    </body>    
+<html>
